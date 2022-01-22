@@ -1,0 +1,25 @@
+https://po-jen-lai.gitbook.io/coding-practice-advanced-topics/
+
+https://www.educative.io/courses/grokking-the-coding-interview
+
+https://blog.techbridge.cc/2019/08/30/leetcode-pattern-two-pointer/
+
+python list slice
+https://blog.techbridge.cc/2021/06/28/zen-coding-challenge-array-intro-3/
+
+136. Single Number
+66. Plus One
+
+我的 Leetcode 刷題筆記 - Two Pointer pattern
+Leetcode 刷題 pattern - Sliding Window
+Leetcode 刷題 pattern - Next Greater Element
+Leetcode 刷題 pattern - Fast & Slow Pointer
+Leetcode 刷題 pattern - Breadth-First Search
+Leetcode 刷題 pattern - Merge Intervals
+Leetcode 刷題 pattern - Cyclic Sort
+Leetcode 刷題 pattern - Two Heaps
+Leetcode 刷題 pattern - Top K elements
+Leetcode 刷題 pattern - Topological Sort
+Leetcode 刷題 pattern - Bitwise XOR
+Leetcode 刷題 pattern - 一週年特典
+Leetcode 刷題pattern - 美國軟體工程師求職有趣經驗

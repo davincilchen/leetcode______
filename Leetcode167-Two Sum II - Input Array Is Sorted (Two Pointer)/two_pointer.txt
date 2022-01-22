@@ -1,0 +1,3 @@
+https://afteracademy.com/blog/what-is-the-two-pointer-technique
+https://yuihuang.com/two-pointers/
+https://blog.techbridge.cc/2019/08/30/leetcode-pattern-two-pointer/
