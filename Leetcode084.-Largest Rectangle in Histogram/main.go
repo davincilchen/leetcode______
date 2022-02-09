@@ -113,7 +113,6 @@ import (
 // }
 
 // ================================= //
-//簡單版 stack , 要keep return 值
 type stack struct {
 	item []int
 }
