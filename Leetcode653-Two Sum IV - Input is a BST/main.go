@@ -32,6 +32,44 @@ import "fmt"
  * }
  */
 
+//BST
+//https://pjchender.dev/dsa/dsa-bst/
+
+// func printPreOrder(n *Node) {
+// 	if n == nil {
+// 		return
+// 	} else {
+// 		fmt.Printf("%d ", n.data)
+// 		printPreOrder(n.left)
+// 		printPreOrder(n.right)
+// 	}
+// }
+
+// func printInOrder(n *Node) {
+// 	if n == nil {
+// 		return
+// 	} else {
+// 		printPostOrder(n.left)
+// 		fmt.Printf("%c ", n.data)
+// 		printPostOrder(n.right)
+// 	}
+// }
+
+// func printPostOrder(n *Node) {
+// 	if n == nil {
+// 		return
+// 	} else {
+// 		printPostOrder(n.left)
+// 		printPostOrder(n.right)
+// 		fmt.Printf("%c ", n.data)
+// 	}
+// }
+
+//https://magiclen.org/arithmetic/
+// 前序：運算子 運算元 運算元
+// 中序：運算元 運算子 運算元
+// 後序：運算元 運算元 運算子
+
 // Runtime: 24 ms, faster than 78.03% of Go online submissions for Two Sum IV - Input is a BST.
 //Memory Usage: 7.9 MB, less than 28.03% of Go online submissions for Two Sum IV - Input is a BST.
 
