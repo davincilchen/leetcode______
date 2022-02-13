@@ -1,3 +1,47 @@
 https://afteracademy.com/blog/what-is-the-two-pointer-technique
 https://yuihuang.com/two-pointers/
 https://blog.techbridge.cc/2019/08/30/leetcode-pattern-two-pointer/
+
+Two Pointer 解法
+Two Pointer 的解法跟上一題的精神有異曲同工之妙，首先，我們要注意到這題的輸入是一個 non-decreasing array，也就是等於已經排好序啦！所以，我們一樣可以用左右手兩根食指，左手指到最前面，右手指到最後面，然後開始比較。
+
+唯一一個不一樣的地方是，原本的 array 中有負數，但既然已經排好序，我們只要比較兩邊的平方數就好，看個範例吧：
+
+numbers = [-4,-1,0,3,10]
+初始化，拿出你的手指，左手指向 -4，右手指向 10，這時兩根手指的平方數分別是 16 跟 100，因為 100 比較大，所以我們把它放到答案 array 的尾端。
+
+然後接下來大家大概都會了：
+
+把右手往左移，指向 3; 這時 16 > 9，把 16 放到答案 array 的尾端 - 1 的位置
+把左手往右移，指向 -1; 這時 9 > 1，把 9 放到答案 array 的尾端 - 2 的位置
+把右手往左移，指向 0; 這時 1 > 0，把 1 放到答案 array 的尾端 - 3 的位置
+把左手往右移，指向 0；這時兩邊指的都一樣，直接把 0 放到答案 array 的尾端 - 4 的位置
+是不是也很簡單呢？而且時間複雜度就降到 O(n) 了。
+
+這時再看個 code，覺得棒：
+
+class Solution {
+public:
+  vector<int> sortedSquares(vector<int>& arr) {
+    int n = arr.size();
+    vector<int> squares(n);
+
+    int highestIdx = n-1;
+    int l=0, r=n-1;
+    while(l <= r) {
+      int leftSquare = pow(arr[l], 2);
+      int rightSquare = pow(arr[r], 2);
+
+      if(leftSquare >= rightSquare) {
+        squares[highestIdx--] = leftSquare;
+        l++;
+      }
+      else {
+        squares[highestIdx--] = rightSquare;
+        r--;
+      }
+    }
+
+    return squares;
+  }
+};
