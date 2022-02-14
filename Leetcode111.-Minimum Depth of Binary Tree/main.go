@@ -53,7 +53,7 @@ func TransToNormalTree(s []int) []int {
 	if len(s) == 0 {
 		return []int{}
 	}
-
+	padding := make([]bool, len(s))
 	ret := make([]int, 0, 1)
 
 	level := 0
@@ -75,12 +75,18 @@ func TransToNormalTree(s []int) []int {
 		}
 
 		levelCnt++
-		curIdx := levelCnt + lastTotalNodes
+		curIdx := levelCnt + lastTotalNodes - 1
 		parent := findParent(curIdx)
 		for j := parent; ret[j] == -1 && j < levelTotalNodes; j++ {
-			if len(ret) >= parent*2 {
-				continue // already padding
+			if len(padding) <= j {
+				slice := make([]bool, j+1)
+				copy(slice, padding)
+				padding = slice
 			}
+			if padding[j] {
+				continue
+			}
+			padding[j] = true
 			ret = append(ret, []int{-1, -1}...)
 			levelCnt += 2
 		}
@@ -104,7 +110,7 @@ func buildTree(in []int) *TreeNode {
 
 	tree := TransToNormalTree(in)
 	tmp := make([]*TreeNode, len(tree))
-	for i, v := range in {
+	for i, v := range tree {
 		if i == 0 {
 			tmp[0] = &TreeNode{Val: v}
 			continue
