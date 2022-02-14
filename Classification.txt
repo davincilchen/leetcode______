@@ -1,3 +1,12 @@
+String Process
+
+// - 'a'  : gobase  stringRune RollString
+// - 'a'  : 	suffixRank[0][i] = int(s[i]) - int('a') //byte 無負數
+// HackerRank_challenges_string-function-calculation
+// roll string : migo_001
+
+
+
 BFS
 Leetcode 111. 二叉樹的最小深度（簡單）
 
