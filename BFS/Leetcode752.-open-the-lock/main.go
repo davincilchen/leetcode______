@@ -39,6 +39,32 @@ package main
 
 //怎麼套到 BFS 的框架裡呢？首先明確一下起點 start 和終點 target 是什麼，怎麼判斷到達了終點？
 
+//normal slice queue + replaceAtIndex2
+// Runtime: 178 ms, faster than 44.90% of Go online submissions for Open the Lock.
+// Memory Usage: 8.4 MB, less than 26.53% of Go online submissions for Open the Lock.
+
+//normal slice queue + replaceAtIndex1
+// Runtime: 128 ms, faster than 65.31% of Go online submissions for Open the Lock.
+// Memory Usage: 8.3 MB, less than 34.69% of Go online submissions for Open the Lock.
+
+//pre allow (addQueue2)+  replaceAtIndex1 [為什麼比較慢??]
+// Runtime: 189 ms, faster than 36.74% of Go online submissions for Open the Lock.
+// Memory Usage: 8.6 MB, less than 18.37% of Go online submissions for Open the Lock.
+
+//pre allow (addQueue2)+  replaceAtIndex1 [拿掉一行重跑 有快一點但沒快很多]
+// Runtime: 124 ms, faster than 69.39% of Go online submissions for Open the Lock.
+// Memory Usage: 8.8 MB, less than 17.35% of Go online submissions for Open the Lock.
+
+func replaceAtIndex1(str string, replacement rune, index int) string {
+	out := []rune(str)
+	out[index] = replacement
+	return string(out)
+}
+
+// func replaceAtIndex2(str string, replacement rune, index int) string {
+//     return str[:index] + string(replacement) + str[index+1:]
+// }
+
 func rollup(s string, idx int) string {
 	c := s[idx]
 	if c == '9' {
@@ -46,9 +72,11 @@ func rollup(s string, idx int) string {
 	} else {
 		c += 1
 	}
-	s1 := s[0 : idx-1]
-	s2 := s[idx-1:]
-	return s1 + string(c) + s2
+
+	return replaceAtIndex1(s, rune(c), idx)
+	// s1 := s[:idx]
+	// s2 := s[idx+1:]
+	// return s1 + string(c) + s2
 }
 
 func rolldown(s string, idx int) string {
@@ -58,9 +86,43 @@ func rolldown(s string, idx int) string {
 	} else {
 		c -= 1
 	}
-	s1 := s[0 : idx-1]
-	s2 := s[idx-1:]
-	return s1 + string(c) + s2
+
+	return replaceAtIndex1(s, rune(c), idx)
+	// s1 := s[:idx]
+	// s2 := s[idx+1:]
+	// return s1 + string(c) + s2
+}
+
+func addQueue(s string, queue *[]string, visited map[string]string) {
+	_, ok := visited[s]
+	if ok {
+		return
+	}
+	visited[s] = s
+	//queue = append(queue, s) //if not pointer //this value of dead is never used (SA4006)
+	*queue = append(*queue, s)
+}
+
+func addQueue2(s string, queue []string, visited map[string]string) []string {
+	_, ok := visited[s]
+	if ok {
+		return queue
+	}
+	visited[s] = s
+
+	n := len(queue)
+	if n > 0 && n == cap(queue) {
+		newCap := n * 2
+		//not: newQ := make([]string, newCap, newCap)
+		//not: newQ := make([]string, 0, newCap)
+		// newQ 的元素數量如果「多於」被複製進去的元素時，會用 zero value 去補。例如，當 cloneScores 的長度是 4，但只複製 3 個元素進去時，最後位置多出來的元素會補 zero value。
+		// newQ 的元素數量如果「少於」被複製進去的元素時，超過的元素不會被複製進去。例如，當 cloneScores 的長度是 1，但卻複製了 3 個元素進去時，只會有 1 個元素被複製進去。
+		newQ := make([]string, n, newCap) //!!!!
+		copy(newQ, queue)
+		return append(newQ, s)
+	}
+
+	return append(queue, s)
 }
 
 func openLock(deadends []string, target string) int {
@@ -70,16 +132,38 @@ func openLock(deadends []string, target string) int {
 		visited[v] = v
 	}
 
-	
-	queue := []string{}
-
-	for {
-		n := 
-		for i := range target {
-
-		}
+	_, ok := visited["0000"]
+	if ok {
+		return -1
 	}
 
+	turn := 0
+	queue := []string{"0000"}
+
+	for {
+		n := len(queue)
+		if n <= 0 {
+			break
+		}
+
+		for k := 0; k < n; k++ {
+			cur := queue[0]
+			if cur == target {
+				return turn
+			}
+
+			queue = queue[1:]
+			for i := range cur {
+				//addQueue(rollup(cur, i), &queue, visited)
+				//addQueue(rolldown(cur, i), &queue, visited)
+				queue = addQueue2(rollup(cur, i), queue, visited)
+				queue = addQueue2(rolldown(cur, i), queue, visited)
+
+			}
+
+		}
+		turn++
+	}
 
 	return -1
 }

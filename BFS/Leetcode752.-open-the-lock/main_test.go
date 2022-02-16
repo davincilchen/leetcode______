@@ -15,4 +15,12 @@ func Test_openLock(t *testing.T) {
 	v = openLock(dead, "0202")
 	assert.Equal(t, 6, v)
 
+	dead = []string{"8888"}
+	v = openLock(dead, "0009")
+	assert.Equal(t, 1, v)
+
+	dead = []string{"8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888"}
+	v = openLock(dead, "8888")
+	assert.Equal(t, -1, v)
+
 }
