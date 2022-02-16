@@ -17,6 +17,8 @@ Leetcode 111. 二叉樹的最小深度（簡單）
 
 
 BFS
+many bfs
+https://iter01.com/649116.html
 https://hackmd.io/@SCIST/BFS
 https://kknews.cc/zh-tw/code/j2xa2e.html
 
@@ -47,6 +49,7 @@ hankerrank
 Number of Moves - Chessboard - Online Assessment Hackerrank
 
 https://www.hackerrank.com/challenges/knightl-on-chessboard/problem
+https://www.youtube.com/watch?v=_uiqoiELPNI
 
 -----
 https://leetcode.com/discuss/interview-question/865012/number-of-moves-chessboard-online-assessment-hackerrank
