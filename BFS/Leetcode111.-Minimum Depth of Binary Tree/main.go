@@ -251,6 +251,22 @@ func DFS_Print(root *TreeNode) {
 //     return ans
 // }
 
+//Max deep
+//DFS
+// func maxDepth(root *TreeNode) int {
+//     if root == nil {
+//         return 0
+//     }
+//     return max(maxDepth(root.Left), maxDepth(root.Right)) + 1
+// }
+
+// func max(a, b int) int {
+//     if a > b {
+//         return a
+//     }
+//     return b
+// }
+
 // 迭代實現，廣度優先遍歷
 func minDepth(root *TreeNode) int {
 	if root == nil {
