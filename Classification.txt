@@ -5,6 +5,10 @@ String Process
 // HackerRank_challenges_string-function-calculation
 // roll string : migo_001
 
+interview-question
+
+https://leetcode.com/discuss/interview-question
+
 
 
 Build Tree
@@ -13,11 +17,40 @@ Leetcode 111. 二叉樹的最小深度（簡單）
 
 
 BFS
+https://hackmd.io/@SCIST/BFS
+https://kknews.cc/zh-tw/code/j2xa2e.html
+
+https://iter01.com/649116.html
 Leetcode 111. 二叉樹的最小深度（簡單）
 
 Leetcode 752. 開啟轉盤鎖（中等）
 
+Move
 
+Leetcode 2056. Number of Valid Move Combinations On Chessboard
+
+Hankerrank - Number of Moves - Chessboard - Online Assessment Hackerrank
+Hankerrank - knightl-on-chessboard
+https://www.hackerrank.com/challenges/knightl-on-chessboard/problem
 
 面積
 Leetcode084.-Largest Rectangle in Histogram
+
+---
+
+
+MOVE
+leetcode
+2056. Number of Valid Move Combinations On Chessboard
+
+hankerrank
+Number of Moves - Chessboard - Online Assessment Hackerrank
+
+https://www.hackerrank.com/challenges/knightl-on-chessboard/problem
+
+-----
+https://leetcode.com/discuss/interview-question/865012/number-of-moves-chessboard-online-assessment-hackerrank
+
+It can be solved using BFS.
+
+just do bfs & cont minimum number of moves.. for every state u have 8 possibilities
