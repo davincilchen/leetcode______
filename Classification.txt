@@ -1,63 +1,18 @@
-String Process
-
-// - 'a'  : gobase  stringRune RollString
-// - 'a'  : 	suffixRank[0][i] = int(s[i]) - int('a') //byte 無負數
-// HackerRank_challenges_string-function-calculation
-// roll string : migo_001
-
-interview-question
-
-https://leetcode.com/discuss/interview-question
-
-
-all
-https://github.com/davincilchen/GoLabuladongAlgorithm
-https://adamlin0708.gitbooks.io/ac-leetcode/content/
-https://yuihuang.com/two-pointers/
-
-Build Tree
-Leetcode 111. 二叉樹的最小深度（簡單）
 
 
 
-BFS
-many bfs
-https://iter01.com/649116.html
-https://hackmd.io/@SCIST/BFS
-https://kknews.cc/zh-tw/code/j2xa2e.html
+Sliding Window
+https://blog.techbridge.cc/2019/09/28/leetcode-pattern-sliding-window/
 
-https://iter01.com/649116.html
-Leetcode 111. 二叉樹的最小深度（簡單）
 
-Leetcode 752. 開啟轉盤鎖（中等）
+Two Pointer
+https://blog.techbridge.cc/2019/08/30/leetcode-pattern-two-pointer/
 
-Move
-
-Leetcode 2056. Number of Valid Move Combinations On Chessboard
-
-Hankerrank - Number of Moves - Chessboard - Online Assessment Hackerrank
-Hankerrank - knightl-on-chessboard
-https://www.hackerrank.com/challenges/knightl-on-chessboard/problem
 
 面積
 Leetcode084.-Largest Rectangle in Histogram
 
----
+BFS
+Leetcode 111. 二叉樹的最小深度（簡單）
 
-
-MOVE
-leetcode
-2056. Number of Valid Move Combinations On Chessboard
-
-hankerrank
-Number of Moves - Chessboard - Online Assessment Hackerrank
-
-https://www.hackerrank.com/challenges/knightl-on-chessboard/problem
-https://www.youtube.com/watch?v=_uiqoiELPNI
-
------
-https://leetcode.com/discuss/interview-question/865012/number-of-moves-chessboard-online-assessment-hackerrank
-
-It can be solved using BFS.
-
-just do bfs & cont minimum number of moves.. for every state u have 8 possibilities
+Leetcode 752. 開啟轉盤鎖（中等）
