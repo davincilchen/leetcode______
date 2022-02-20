@@ -1,4 +1,4 @@
-
+const INT_MAX = int(^uint(0) >> 1)
 
 
 Sliding Window
@@ -7,6 +7,10 @@ https://blog.techbridge.cc/2019/09/28/leetcode-pattern-sliding-window/
 
 Two Pointer
 https://blog.techbridge.cc/2019/08/30/leetcode-pattern-two-pointer/
+
+
+Dynamic Programming
+https://ithelp.ithome.com.tw/articles/10213270
 
 
 面積
