@@ -12,5 +12,6 @@ func Test_maxSubArray(t *testing.T) {
 
 	assert.Equal(t, 0, costToBalance("())"))
 
-	assert.Equal(t, 0, costToBalance("))())"))
+	assert.Equal(t, 3, costToBalance("))())("))
+
 }
