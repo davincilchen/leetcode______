@@ -1,0 +1,20 @@
+package main
+
+import (
+	"testing"
+)
+
+func Test_maxSubArray(t *testing.T) {
+
+	// assert.Equal(t, 1, costToBalance("(()))"))
+
+	// assert.Equal(t, 0, costToBalance("())"))
+
+	// assert.Equal(t, 3, costToBalance("))())("))
+
+	// assert.Equal(t, 6, costToBalance("(((((("))
+
+	// assert.Equal(t, 3, costToBalance("))))))"))
+	// assert.Equal(t, 5, costToBalance(")))))))"))
+
+}
