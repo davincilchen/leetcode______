@@ -160,8 +160,8 @@ func largestRectangleArea(heights []int) int {
 
 	for i, h := range heights {
 		for stack.Len() > 0 && heights[*stack.Peek()] >= h {
-			w := i
-			idx := stack.Pop()
+			w := i             //pop後 stack.Len() == 0 都比最後一根高
+			idx := stack.Pop() //挑出比h大的,去計算
 			if stack.Len() > 0 {
 				w = i - 1 - *stack.Peek()
 			}
