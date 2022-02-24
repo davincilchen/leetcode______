@@ -37,7 +37,7 @@ int Partition1(int *arr, int front, int end){
         }
     }
     i++;
-    swap(&arr[i], &arr[end]);
+    swap(&arr[i], &arr[end]); //switch pivot
     return i;
 }
 
@@ -54,7 +54,7 @@ int Partition2(int *arr, int front, int end){
         }
     }
     //i++;
-    swap(&arr[i], &arr[end]);
+    swap(&arr[i], &arr[end]); //switch pivot
     //i++;
     return i;
 }
