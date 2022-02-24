@@ -1,8 +1,18 @@
 
 #include <iostream>
 
+
+
 //http://alrightchiu.github.io/SecondRound/comparison-sort-quick-sortkuai-su-pai-xu-fa.html
 
+
+//https://rust-algo.club/sorting/quicksort/index.html
+// Space complexity
+// Quicksort 的空間複雜度取決於實作細節，由於分割序列步驟需 O(1) 的空間複雜度，因此僅需分析遞迴式會在 call stack 產生多少 stack frame 即可。
+
+// 前面提及，最 naïve 的 Lomuto partition 最糟糕的情形下，會產生 n−1 個嵌套遞迴，也就是需額外使用 O(n) 的空間儲存 call stack frame，但只要 compiler 有支援尾端呼叫最佳化（tail-call optimization，TCO），Quicksort 很容易最佳化至 O(logn)。
+
+//===============
 // int front為數列的「最前端」index。
 // 此例，front為index(0)。
 // int end為數列的「最尾端」index。
