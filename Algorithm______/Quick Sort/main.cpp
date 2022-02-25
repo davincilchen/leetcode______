@@ -7,6 +7,12 @@
 
 
 //https://rust-algo.club/sorting/quicksort/index.html
+
+//簡單的最佳化實作下，Quicksort 僅需 O(logn) 的額外儲存空間，
+//比它的競爭對手 mergesort 來得節省。非常適合運用在真實世界中的排序法。
+
+
+//======
 // Space complexity
 // Quicksort 的空間複雜度取決於實作細節，由於分割序列步驟需 O(1) 的空間複雜度，因此僅需分析遞迴式會在 call stack 產生多少 stack frame 即可。
 
