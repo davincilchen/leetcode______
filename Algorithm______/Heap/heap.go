@@ -71,14 +71,41 @@ func (m *Heap) downHeapifyForMax(current int, size int) {
 
 }
 
-func (m *Heap) buildMinHeap(size int) {
+func (m *Heap) BuildMinHeap(size int) {
 	for index := ((size / 2) - 1); index >= 0; index-- {
 		m.downHeapifyForMin(index, size)
 	}
 }
 
-func (m *Heap) buildMaxHeap(size int) {
+func (m *Heap) BuildMaxHeap(size int) {
 	for i := size/2 - 1; i >= 0; i-- {
 		m.downHeapifyForMax(i, size)
 	}
+}
+
+func (m *Heap) DecreaseSort() []int {
+	size := len(m.arr)
+	m.BuildMinHeap(size)
+	for i := size; i > 1; i-- {
+		m.swap(0, i-1)
+		m.downHeapifyForMin(0, i-1)
+	}
+	return m.arr
+}
+
+func (m *Heap) IncreaseSort() []int {
+	size := len(m.arr)
+	m.BuildMaxHeap(size)
+	for i := size; i > 1; i-- {
+		m.swap(0, i-1)
+		m.downHeapifyForMax(0, i-1)
+	}
+	return m.arr
+}
+
+func (m *Heap) Sort(decrease bool) []int {
+	if decrease {
+		return m.DecreaseSort()
+	}
+	return m.IncreaseSort()
 }
