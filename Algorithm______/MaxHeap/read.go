@@ -6,6 +6,8 @@ package main
 //https://ithelp.ithome.com.tw/articles/10250174
 //https://rust-algo.club/sorting/heapsort/
 //https://ithelp.ithome.com.tw/articles/10214861
+//https://golangbyexample.com/heapsort-in-golang/
+//https://leetcode.com/problems/k-closest-points-to-origin/discuss/1457945/go-solution-min-heap
 
 // 堆積排序 Heapsort
 // Heapsort（堆積排序）可以看作是 selection sort 的變形，同樣會將資料分為 sorted pile 與 unsorted pile，並在 unsorted pile 中尋找最大值（或最小值），加入 sorted pile 中。
