@@ -1,11 +1,18 @@
 package main
 
 type Heap struct {
+	min bool
 	arr []int
 }
 
-func NewHeap(arr []int) *Heap {
-	return &Heap{arr: arr}
+func NewHeap(arr []int, min bool) *Heap {
+	h := &Heap{min: min, arr: arr}
+	if min {
+		h.buildMinHeap()
+	} else {
+		h.buildMaxHeap()
+	}
+	return h
 }
 
 func (t *Heap) leftchildIndex(index int) int {
@@ -71,13 +78,15 @@ func (m *Heap) downHeapifyForMax(current int, size int) {
 
 }
 
-func (m *Heap) BuildMinHeap(size int) {
+func (m *Heap) buildMinHeap() {
+	size := len(m.arr)
 	for index := ((size / 2) - 1); index >= 0; index-- {
 		m.downHeapifyForMin(index, size)
 	}
 }
 
-func (m *Heap) BuildMaxHeap(size int) {
+func (m *Heap) buildMaxHeap() {
+	size := len(m.arr)
 	for i := size/2 - 1; i >= 0; i-- {
 		m.downHeapifyForMax(i, size)
 	}
@@ -85,7 +94,7 @@ func (m *Heap) BuildMaxHeap(size int) {
 
 func (m *Heap) DecreaseSort() []int {
 	size := len(m.arr)
-	m.BuildMinHeap(size)
+	//m.buildMinHeap(size)
 	for i := size - 1; i > 0; i-- {
 		// Move current root to end
 		m.swap(0, i)              //i : last element
@@ -96,7 +105,7 @@ func (m *Heap) DecreaseSort() []int {
 
 func (m *Heap) IncreaseSort() []int {
 	size := len(m.arr)
-	m.BuildMaxHeap(size)
+	//m.buildMaxHeap(size)
 	for i := size - 1; i > 0; i-- {
 		// Move current root to end
 		m.swap(0, i)              //i : last element
@@ -105,8 +114,8 @@ func (m *Heap) IncreaseSort() []int {
 	return m.arr
 }
 
-func (m *Heap) Sort(decrease bool) []int {
-	if decrease {
+func (m *Heap) Sort() []int {
+	if m.min {
 		return m.DecreaseSort()
 	}
 	return m.IncreaseSort()

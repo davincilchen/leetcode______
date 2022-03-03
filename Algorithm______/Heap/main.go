@@ -26,20 +26,18 @@ func MaxHeapifyTopDown(currLastNode int, in []int) {
 }
 
 func HeapifyMin(arr []int) []int {
-	t := NewHeap(arr)
-	t.BuildMinHeap(len(arr))
+	t := NewHeap(arr, true)
 	return t.arr
 }
 
 func HeapifyMax(arr []int) []int {
-	t := NewHeap(arr)
-	t.BuildMaxHeap(len(arr))
+	t := NewHeap(arr, false)
 	return t.arr
 }
 
 func Sort(arr []int, decrease bool) []int {
-	t := NewHeap(arr)
-	t.Sort(decrease)
+	t := NewHeap(arr, decrease)
+	t.Sort()
 	return t.arr
 }
 
