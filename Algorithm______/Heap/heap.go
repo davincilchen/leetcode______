@@ -86,9 +86,10 @@ func (m *Heap) BuildMaxHeap(size int) {
 func (m *Heap) DecreaseSort() []int {
 	size := len(m.arr)
 	m.BuildMinHeap(size)
-	for i := size; i > 1; i-- {
-		m.swap(0, i-1)
-		m.downHeapifyForMin(0, i-1)
+	for i := size - 1; i > 0; i-- {
+		// Move current root to end
+		m.swap(0, i)              //i : last element
+		m.downHeapifyForMin(0, i) //i : new size
 	}
 	return m.arr
 }
@@ -96,9 +97,10 @@ func (m *Heap) DecreaseSort() []int {
 func (m *Heap) IncreaseSort() []int {
 	size := len(m.arr)
 	m.BuildMaxHeap(size)
-	for i := size; i > 1; i-- {
-		m.swap(0, i-1)
-		m.downHeapifyForMax(0, i-1)
+	for i := size - 1; i > 0; i-- {
+		// Move current root to end
+		m.swap(0, i)              //i : last element
+		m.downHeapifyForMax(0, i) //i : new size
 	}
 	return m.arr
 }
