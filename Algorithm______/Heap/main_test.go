@@ -8,7 +8,7 @@ import (
 
 func Test_Heapify(t *testing.T) {
 
-	//.. max .. //
+	//.. min .. //
 	assert.Equal(t, []int{1, 3, 2, 20, 17, 21}, HeapifyMin([]int{17, 20, 2, 1, 3, 21}))
 	assert.Equal(t, []int{1, 3, 2, 6, 20, 5, 4, 17, 21}, HeapifyMin([]int{5, 6, 4, 17, 20, 2, 1, 3, 21}))
 
@@ -29,6 +29,21 @@ func Test_Sort(t *testing.T) {
 	assert.Equal(t, []int{21, 20, 17, 6, 5, 4, 3, 2, 1}, Sort([]int{5, 6, 4, 17, 20, 2, 1, 3, 21}, true))
 	assert.Equal(t, []int{6, 5, 4}, Sort([]int{5, 6, 4}, true))
 	assert.Equal(t, []int{5}, Sort([]int{5}, true))
+}
+
+func Test_Push(t *testing.T) {
+
+	h := NewHeap([]int{5, 6, 4, 17, 20, 11, 1, 3, 21}, true) //1, 3, 4, 6, 20, 11, 5, 17, 21
+	h.Push(2)
+	assert.Equal(t, []int{1, 2, 4, 6, 3, 11, 5, 17, 21, 20}, h.arr)
+
+	h = NewHeap([]int{5, 6, 4, 17, 20, 11, 1, 3}, true) //1, 3, 4, 6, 20, 11, 5, 17
+	h.Push(2)
+	assert.Equal(t, []int{1, 2, 4, 3, 20, 11, 5, 17, 6}, h.arr)
+
+	h = NewHeap([]int{5, 6, 4, 17, 20, 11, 1, 3}, false) //20, 17, 11, 5, 6, 4, 1, 3
+	h.Push(33)
+	assert.Equal(t, []int{33, 20, 11, 17, 6, 4, 1, 3, 5}, h.arr)
 }
 
 func Test_Pop(t *testing.T) {

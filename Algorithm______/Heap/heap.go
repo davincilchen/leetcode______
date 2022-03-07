@@ -15,6 +15,10 @@ func NewHeap(arr []int, min bool) *Heap {
 	return h
 }
 
+func (t *Heap) parentIndex(index int) int {
+	return (index - 1) / 2
+}
+
 func (t *Heap) leftchildIndex(index int) int {
 	return index*2 + 1
 }
@@ -134,5 +138,24 @@ func (m *Heap) Pop() *int {
 		m.downHeapifyForMax(0, cnt-1)
 	}
 	return &ret
+
+}
+
+func (m *Heap) Push(in int) {
+	m.arr = append(m.arr, in)
+
+	size := len(m.arr)
+	p := m.parentIndex(size - 1)
+	for p >= 0 {
+		if m.min {
+			m.downHeapifyForMin(p, size)
+		} else {
+			m.downHeapifyForMax(p, size)
+		}
+		if p == 0 {
+			break
+		}
+		p = m.parentIndex(p)
+	}
 
 }
