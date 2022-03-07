@@ -1,0 +1,61 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+            "name": "C++ Launch",		// 配置名稱，將會在除錯配置下拉列表中顯示
+            "type": "cppdbg",			// 偵錯程式型別：Windows表示器使用cppvsdbg；GDB和LLDB使用cppdbg。該值自動生成
+            "request": "launch",		// 除錯方式
+            "program": "${workspaceRoot}/main.exe",		// 要除錯的程式（完整路徑，支援相對路徑）
+            "args": [],					// 傳遞給上面程式的引數，沒有引數留空即可
+            "stopAtEntry": false,		// 是否停在程式入口點（停在main函式開始）
+            "cwd": "${workspaceRoot}",	// 除錯程式時的工作目錄
+            "environment": [],
+            "externalConsole": true,	// 除錯時是否顯示控制檯視窗
+            "linux": {			// 下面是Linux平臺下，需要配置的引數，這裡暫時不用關心
+                "MIMode": "gdb",
+                "setupCommands": [{
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }]
+            },
+            "osx": {			// 下面是Mac平臺下，需要配置的引數，這裡暫時不用關心
+                "MIMode": "lldb"
+            },
+            "windows": {		// 下面是Windows平臺下，需要配置的引數
+                "MIMode": "gdb",		// VSCode要使用的除錯工具
+                "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",		// miDebugger的路徑，該值必須設定。儘管會自動搜尋
+                "setupCommands": [{
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }]
+            }
+        },
+        { // 不用關心
+            "name": "C++ Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "${workspaceRoot}/main.exe",
+            "processId": "${command.pickProcess}",			// 要Attach的程序ID
+            "linux": {
+                "MIMode": "gdb",
+                "setupCommands": [{
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }]
+            },
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "windows": {
+                "MIMode": "gdb",
+                "setupCommands": [{
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }]
+            }
+        }
+    ]
+}
