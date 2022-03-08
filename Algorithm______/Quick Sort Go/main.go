@@ -27,10 +27,45 @@ func QuickSort(arr []int, start, end int) {
 		return
 	}
 
-	p := Partition(arr, start, end)
+	//p := Partition(arr, start, end)
+	p := partition(arr, start, end)
 	QuickSort(arr, start, p-1)
 	QuickSort(arr, p+1, end)
 
+}
+
+// func partition(arr []int, low, high int) ([]int, int) {
+// 	pivot := arr[high]
+// 	i := low
+// 	for j := low; j < high; j++ {
+// 		if arr[j] < pivot {
+// 			arr[i], arr[j] = arr[j], arr[i]
+// 			i++
+// 		}
+// 	}
+// 	arr[i], arr[high] = arr[high], arr[i]
+// 	return arr, i
+// }
+
+func partition(arr []int, low, high int) int {
+
+	// a := 1
+	// b := 2
+	// c := 3
+	// a, b, c = b, c, a
+
+	pivot := arr[high]
+	i := low
+	for j := low; j < high; j++ {
+		if Compare(arr[j], pivot) {
+			continue
+		}
+		arr[i], arr[j] = arr[j], arr[i]
+		i++
+
+	}
+	arr[i], arr[high] = arr[high], arr[i]
+	return i
 }
 
 func Partition(arr []int, start, end int) int { // pivot
