@@ -1,5 +1,10 @@
 package main
 
+// 1. Coding Test (RD)
+// 2. System Design + General Technical Question (RD)
+// 3. Behavior Question (RD manager)
+// 4. Background (CTO)
+
 type compare func(a, b int) bool
 
 var Compare compare
@@ -57,15 +62,22 @@ func merge(arr1, arr2 []int) []int {
 		}
 	}
 
-	for i < l1 {
-		ret = append(ret, arr1[i])
-		i++
+	// for i < l1 {
+	// 	ret = append(ret, arr1[i])
+	// 	i++
+	// }
+	if i < l1 {
+		ret = append(ret, arr1[i:l1]...)
 	}
 
-	for j < l2 {
-		ret = append(ret, arr2[j])
-		j++
+	// for j < l2 {
+	// 	ret = append(ret, arr2[j])
+	// 	j++
+	// }
+	if j < l2 {
+		ret = append(ret, arr2[j:l2]...)
 	}
+
 	return ret
 }
 
