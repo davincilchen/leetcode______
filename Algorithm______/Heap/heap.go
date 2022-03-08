@@ -28,9 +28,11 @@ func (t *Heap) rightchildIndex(index int) int {
 }
 
 func (t *Heap) swap(i, j int) {
-	tmp := t.arr[i]
-	t.arr[i] = t.arr[j]
-	t.arr[j] = tmp
+	// tmp := t.arr[i]
+	// t.arr[i] = t.arr[j]
+	// t.arr[j] = tmp
+
+	t.arr[i], t.arr[j] = t.arr[j], t.arr[i]
 }
 
 func (t *Heap) leaf(index, size int) bool {
