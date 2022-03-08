@@ -41,6 +41,7 @@ func (t *Heap) leaf(index, size int) bool {
 	return false
 }
 
+//shift down
 func (m *Heap) downHeapifyForMin(current int, size int) {
 	if m.leaf(current, size) {
 		return
@@ -61,6 +62,7 @@ func (m *Heap) downHeapifyForMin(current int, size int) {
 
 }
 
+//shift down
 func (m *Heap) downHeapifyForMax(current int, size int) {
 	if m.leaf(current, size) {
 		return
