@@ -1,0 +1,19 @@
+merge sort = stable 但需要額外的n空間 非inplace演算法
+
+每次merge時都會寫到多出來的空間 ,必寫!!
+
+但quick不一定會寫?? (好像會) (但寫的次數較少?)
+
+
+另外因為merge sort會寫到多出來的空間
+不能使用空間暫存性 ,無法有效使用cache
+
+外部merge sort
+
+link list ok!!
+
+---
+
+quick 在 partion的時候 會使用隨機存取
+對link list的來源會效能下降?
+
