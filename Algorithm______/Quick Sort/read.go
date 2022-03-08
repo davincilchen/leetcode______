@@ -1,5 +1,7 @@
 package main
 
+//n*Logn  //每個點會被處理logn 次, 有n個點
+
 // 效能
 // Complexity
 // Worst	O(n2)

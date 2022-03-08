@@ -5,6 +5,7 @@ package main
 // 3. Behavior Question (RD manager)
 // 4. Background (CTO)
 
+//n*Logn  //每個點會被處理logn 次, 有n個點
 type compare func(a, b int) bool
 
 var Compare compare

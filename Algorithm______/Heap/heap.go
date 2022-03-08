@@ -1,5 +1,6 @@
 package main
 
+//n*Logn  //每個點會被處理logn 次, 有n個點
 type Heap struct {
 	min bool
 	arr []int
