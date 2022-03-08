@@ -57,7 +57,7 @@ func partition(arr []int, low, high int) int {
 	pivot := arr[high]
 	i := low
 	for j := low; j < high; j++ {
-		if Compare(arr[j], pivot) {
+		if Compare(arr[j], pivot) { //注意,不要的留在原地,等待被換
 			continue
 		}
 		arr[i], arr[j] = arr[j], arr[i]
