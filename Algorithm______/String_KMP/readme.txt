@@ -7,6 +7,17 @@ https://www.itread01.com/content/1505656572.html
 https://zhuanlan.zhihu.com/p/36190375
 
 https://medium.com/nlp-tsupei/kmp%E7%AE%97%E6%B3%95%E8%A9%B3%E8%A7%A3-1b1050a45850
+https://yeefun.github.io/kmp-algorithm-for-beginners/
+
+*
+PMT(Partial Match Table)『最長公共前後綴』
+*
+次長共同前後綴（Longest Proper Prefix Which Is Also Suffix
+LPS
+LPPAS
+
+
+
 
 
 
