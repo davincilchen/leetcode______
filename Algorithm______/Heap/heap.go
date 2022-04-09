@@ -134,6 +134,8 @@ func (m *Heap) Pop() *int {
 		return nil
 	}
 	ret := m.arr[0]
+	
+
 	m.arr[0] = m.arr[cnt-1]
 	m.arr = m.arr[:cnt-1]
 
@@ -153,7 +155,7 @@ func (m *Heap) Push(in int) {
 
 	size := len(m.arr)
 	p := m.parentIndex(size - 1)
-	for p >= 0 {
+	for p >= 0 { //有parent
 		if m.min {
 			m.downHeapifyForMin(p, size)
 		} else {
