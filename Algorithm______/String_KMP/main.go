@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 //https://www.youtube.com/watch?v=t6xa2p6fFS8
 //https://www.youtube.com/watch?v=3IFxpozBs2I
 //https://www.youtube.com/watch?v=S3ckBIJG6fo
@@ -210,31 +208,16 @@ func strStr(haystack string, needle string) int {
 	pattern := []rune(needle)
 	table := PrefixTableShift1(needle)
 
-	fmt.Println(len(text), len(pattern))
 	i := 0
 	j := 0
 	for i < len(text) {
-		// if i == 115 {
-		// 	fmt.Println(text[115:])
-		// }
 		for j < len(pattern) {
-			// if i == 115 {
-			// 	fmt.Println(string(text[115:]))
-			// }
 			if i >= len(text) {
 				return -1
 			}
 			if text[i] != pattern[j] {
-				// if i > 110 {
-				// 	fmt.Println(string(text[i:]))
-				// }
-				// fmt.Printf("i = %d, new j = %d, cnt = %d\n", i, j, cnt)
 				j = table[j]
-				// cnt = j
-				// fmt.Printf("i = %d, new j = %d, cnt = %d\n", i, j, cnt)
-
 				if j < 0 {
-					//cnt = 0
 					i++
 					j++
 				}
@@ -243,10 +226,6 @@ func strStr(haystack string, needle string) int {
 			if j == len(pattern)-1 {
 				return i - len(pattern) + 1
 			}
-			// if i > 113 {
-			// 	cnt++
-			// 	fmt.Printf("i = %d, new j = %d, cnt = %d\n", i, j, cnt)
-			// }
 
 			i++
 			j++
