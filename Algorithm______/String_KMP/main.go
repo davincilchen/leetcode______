@@ -159,7 +159,8 @@ func PrefixTableShift1(text string) []int {
 		}
 		//無法處理了 長度是0
 		//找不到可以比較的length了
-		length = 0 //ret[length-1] 會有-1,有機會沒reset length = 0
+
+		//length == 0 && chenk failed
 		ret[i] = 0
 		i++
 	}
