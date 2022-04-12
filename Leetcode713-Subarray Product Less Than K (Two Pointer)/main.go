@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 //看一下寫得不好
 // func numSubarrayProductLessThanK(nums []int, k int) int {
 // 	// if k <= 1 {
@@ -47,6 +49,18 @@ package main
 // Two Sum Less Than K
 // Number of Smooth Descent Periods of a Stock
 
+// product 一開始是 1，ans 一開始是 0。
+// 假設一開始左手指向 10，右手也指向 10，這時候 product *= 10 == 10，所以我們知道可以把 ans += 1 == 1。
+// 把右手指往右移，右手指向 5，這時候 product *= 5 == 50，因為依然小於 k，所以我們知道 [10, 5] 跟 [5] 這兩個 subarray 的乘積都小於 k。 所以可以把 ans += (r-l+1) == 1 + (1-0+1) == 3。（r 表示右手指位置，l 則表示左手指位置）
+//			cnt += (r - l + 1)
+// 此次數量(r - l + 1)
+// 如果是3 就是 最左邊單一個, 最左邊兩個相乘, 總共三個相乘
+// 總共這三種
+// 因為是長到最符合才會計算
+
+// 第一次包含右邊的排列組合會不一樣
+// 第一次少左邊的排列組合也會不一樣
+
 func numSubarrayProductLessThanK(nums []int, k int) int {
 	if k <= 1 {
 		return 0
@@ -63,6 +77,7 @@ func numSubarrayProductLessThanK(nums []int, k int) int {
 		if product < k {
 			//fmt.Println("l = ", l, "r = ", r)
 			cnt += (r - l + 1)
+			fmt.Println("l = ", l, "r = ", r, cnt)
 		}
 	}
 
