@@ -77,7 +77,10 @@ func scoreOfParentheses(s string) int {
 
 		//可能是1分或*2
 		tmp := 1
-		if ret*2 > tmp { //可能是第一個) -> 1 , 或第n個) -> *2
+		// if ret*2 > tmp { //可能是第一個) -> 1 , 或第n個) -> *2
+		// 	tmp = ret * 2
+		// }
+		if ret > 0 { //可能是第一個) -> 1 , 或第n個) -> *2
 			tmp = ret * 2
 		}
 		ret = stack[len(stack)-1] + tmp
