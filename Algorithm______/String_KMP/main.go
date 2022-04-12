@@ -93,6 +93,13 @@ package main
 // 	else:
 // 		failure_function[i] = 0
 
+// aba 求 次長
+//  0
+// 求i = 2
+// 因為 i = 1   長度為零 a != b
+// 所以 i = 2時 不用比ab 與 ba 的 後b 與 後a  因為前b與前a 沒有共同長度1
+// 所以只要比 cur = 0 和 i = 2
+
 func PrefixTableNormal1(text string) []int {
 	newTxt := []rune(text)
 	cnt := len(newTxt)
