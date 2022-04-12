@@ -12,4 +12,7 @@ func Test_repeatedSubstringPattern(t *testing.T) {
 
 	assert.Equal(t, false, repeatedSubstringPattern("aba"))
 	assert.Equal(t, true, repeatedSubstringPattern("abcabcabcabc"))
+
+	assert.Equal(t, false, repeatedSubstringPattern("abcdefabcabc"))
+	assert.Equal(t, false, repeatedSubstringPattern("abcabcdefabc"))
 }
