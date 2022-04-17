@@ -1,0 +1,42 @@
+https://www.geeksforgeeks.org/rearrange-a-given-linked-list-in-place/
+
+
+Rearrange a given linked list in-place.
+Difficulty Level : Medium
+Last Updated : 24 Jun, 2021
+Given a singly linked list L0 -> L1 -> … -> Ln-1 -> Ln. Rearrange the nodes in the list so that the new formed list is : L0 -> Ln -> L1 -> Ln-1 -> L2 -> Ln-2 …
+You are required to do this in place without altering the nodes’ values. 
+
+Examples: 
+
+Input:  1 -> 2 -> 3 -> 4
+Output: 1 -> 4 -> 2 -> 3
+
+Input:  1 -> 2 -> 3 -> 4 -> 5
+Output: 1 -> 5 -> 2 -> 4 -> 3
+Recommended: Please solve it on “PRACTICE” first, before moving on to the solution.
+Simple Solution
+
+1) Initialize current node as head.
+2) While next of current node is not null, do following
+    a) Find the last node, remove it from the end and insert it as next
+       of the current node.
+    b) Move current to next to next of current
+The time complexity of the above simple solution is O(n2) where n is the number of nodes in the linked list.
+
+Better Solution 
+1) Copy contents of the given linked list to a vector. 
+2) Rearrange the given vector by swapping nodes from both ends. 
+3) Copy the modified vector back to the linked list. 
+Implementation of this approach: https://ide.geeksforgeeks.org/1eGSEy 
+Thanks to Arushi Dhamija for suggesting this approach.
+
+Efficient Solution:
+
+1) Find the middle point using tortoise and hare method.
+2) Split the linked list into two halves using found middle point in step 1.
+3) Reverse the second half.
+4) Do alternate merge of first and second halves.
+The Time Complexity of this solution is O(n). 
+
+Below is the implementation of this method.
