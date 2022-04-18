@@ -1,0 +1,3 @@
+設{\displaystyle f}f為一函數，其定義域為{\displaystyle X}X，值域為{\displaystyle Y}Y。如果存在一函數{\displaystyle g}g，其定義域和值域分別為{\displaystyle Y,\,X}{\displaystyle Y,\,X}，並對每一{\displaystyle x\in X}x \in X有： {\displaystyle g(f(x))=x\,}{\displaystyle g(f(x))=x\,} 則稱{\displaystyle g}g為{\displaystyle f}f的反函數，記之為{\displaystyle f^{-1}}f^{{-1}}。[註 1]
+
+例如，若給定一函數{\displaystyle f:x\mapsto 3x+2}f:x\mapsto 3x+2，則其反函數為{\displaystyle f^{-1}:x\mapsto {\frac {x-2}{3}}}f^{{-1}}:x\mapsto {\frac  {x-2}{3}}。 若一函數有反函數，此函數便稱為可逆的。

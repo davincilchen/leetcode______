@@ -1,0 +1,9 @@
+
+https://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F
+比較次數{\displaystyle O(n^{2})}O(n^{2})，比較次數與關鍵字的初始狀態無關，總的比較次數{\displaystyle N=(n-1)+(n-2)+...+1=n\times (n-1)/2}N=
+(n-1)+(n-2)+...+1=n (n-1)/2。
+交換次數{\displaystyle O(n)}O(n)
+
+已經有序，交換0次；最壞情況是，逆序，交換{\displaystyle n-1}n-1次。交換次數比泡沫排序較少，由於交換所需CPU時間比比較所需的CPU時間多，{\displaystyle n}n值較小時，選擇排序比泡沫排序快。
+
+原地操作幾乎是選擇排序的唯一優點，當空間複雜度要求較高時，可以考慮選擇排序；實際適用的場合非常罕見。

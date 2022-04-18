@@ -1,0 +1,14 @@
+當{\displaystyle x=\beta ^{y}}{\displaystyle x=\beta ^{y}}時，則有
+
+{\displaystyle y=\log _{\beta }x\!}y=\log_\beta x\!
+其中{\displaystyle \beta }\beta 是對數的底（也稱為基數），而 {\displaystyle y}y就是{\displaystyle x}x（對於底數{\displaystyle \beta }\beta ）的對數，{\displaystyle x}x也稱為真數。
+
+底數{\displaystyle \beta }\beta 的值在實數範圍內常取{\displaystyle e}e、 10、2等，但一定不能是1或0[註 2]
+
+當{\displaystyle x}x和{\displaystyle \beta }\beta 進一步限制為正實數的時候，對數是唯一的實數。 例如，因為
+
+{\displaystyle 3^{4}=3\times 3\times 3\times 3=81}3^4 = 3 \times 3 \times 3 \times 3=81，
+我們可以得出
+
+{\displaystyle 4=\log _{3}81\!}4=\log_3 81\!，
+用日常語言說，即「81以3為底的對數是4」。 這個意思就是說，3的4次方是81。
