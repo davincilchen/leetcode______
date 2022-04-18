@@ -170,6 +170,7 @@ func largestRectangleArea(heights []int) int {
 	return maxArea
 }
 
+//堆疊 (stack) 來存放一個單調遞增數列的位置，然後反覆地計算可能的最大值
 func largestRectangleArea_ori(heights []int) int {
 	if heights == nil || len(heights) <= 0 {
 		return 0
@@ -184,10 +185,12 @@ func largestRectangleArea_ori(heights []int) int {
 		for stack.Len() > 0 && ch <= heights[stack.Peek()] {
 			h := heights[stack.Peek()]
 			stack, _ = stack.Pop()
-			w := i
-			if stack.Len() > 0 {
+			w := i               //stack空的情況,表示左邊都比自己大 (i-1 -  0 + 1)
+			if stack.Len() > 0 { //寬,找左右兩邊比自己大的
 				w = i - 1 - stack.Peek()
 			}
+			//左邊比自己大的都會被pop ,所以左邊界 stack.Peek()
+			//右邊i-1都比自己大,如果是比自己小,自己之前就會被pop算面積
 
 			if area := h * w; area > maxArea {
 				maxArea = area
@@ -211,4 +214,8 @@ func main() {
 
 	fmt.Println("1 -", nums, " : max area = ", largestRectangleArea(nums))
 
+	nums = []int{3}
+	fmt.Println("0 -", nums, " : max area = ", largestRectangleArea_ori(nums))
+
+	fmt.Println("1 -", nums, " : max area = ", largestRectangleArea(nums))
 }

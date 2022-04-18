@@ -25,4 +25,12 @@ func Test_largestRectangleArea(t *testing.T) {
 	nums = []int{2, 4}
 	v = largestRectangleArea(nums)
 	assert.Equal(t, 4, v)
+
+	nums = []int{3}
+	v = largestRectangleArea(nums)
+	assert.Equal(t, 3, v)
+
+	nums = []int{0}
+	v = largestRectangleArea(nums)
+	assert.Equal(t, 0, v)
 }

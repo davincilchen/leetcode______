@@ -160,11 +160,15 @@ func largestRectangleArea(heights []int) int {
 
 	for i, h := range heights {
 		for stack.Len() > 0 && heights[*stack.Peek()] >= h {
-			w := i             //pop後 stack.Len() == 0 都比最後一根高
-			idx := stack.Pop() //挑出比h大的,去計算
-			if stack.Len() > 0 {
+			w := i //pop後 stack.Len() == 0 都比最後一根高
+			//stack空的情況,表示左邊都比自己大 (i-1 -  0 + 1)
+			idx := stack.Pop()   //挑出比h大的,去計算
+			if stack.Len() > 0 { //寬,找左右兩邊比自己大的
 				w = i - 1 - *stack.Peek()
 			}
+			//左邊比自己大的都會被pop ,所以左邊界 stack.Peek()
+			//右邊i-1都比自己大,如果是比自己小,自己之前就會被pop算面積
+
 			area := w * heights[*idx]
 
 			if area > maxArea {
